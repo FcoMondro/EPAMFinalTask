@@ -52,30 +52,35 @@ This repository contains an automated testing framework built using [WebdriverIO
 ## Getting Started
 
 ### 1. Clone the repository
-
-git clone {https://github.com/your-repo/testing-automation-framework.git}
-cd testing-automation-framework
-
+```
+git clone {https://github.com/FcoMondro/EPAMFinalTask/}
+cd EPAMFinalTask
+```
 ### 2. Install Dependencies
+```
 npm install
 npm install -g allure-commandline
-
+```
 ### 3. Run Tests
 
 You can run all tests using the WebdriverIO test runner:
+```
 npm run test
-
+```
 To run specific test suites or files, use:
+```
 npx wdio run ./wdio.conf.js --spec ./test/specs/<spec-file>.js
+```
 
 ### 4. Wiew Test Reports
 
 After running the tests, generate and open the Allure report:
+```
 allure generate allure-results --clean
 allure open
+```
 
-
-<=== Framework Structure ===>
+## Framework Structure 
 
 ├── allure-results/        # Raw data for Allure reports (auto-generated)
 ├── allure-report/         # Generated Allure report (auto-generated)

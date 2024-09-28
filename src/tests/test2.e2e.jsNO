@@ -1,0 +1,33 @@
+const { expect, browser, $ } = require('@wdio/globals')
+const LoginPage = require('../po/pages/login.page');
+const credentials = require('./testData');
+
+const loginPage = new LoginPage();
+
+describe("Final Task", () => {
+    describe('Swag Labs Login', () => {
+        beforeEach(async () => {
+            await loginPage.open();
+            //await browser.url("https://www.saucedemo.com/");  //siempre reiniciar el browser si no es un e2e
+        });
+
+        it("UC-2 Test Login form with credentials by passing ONLY Username", async () =>{
+            // add valid username
+            await loginPage.loginForm.item('username').setValue(credentials.CREDENTIALS.VALID_CREDENTIALS.email);
+            // await $("//input[@data-test='username']").setValue("standard_user");
+            
+            // empty password field
+            await loginPage.loginForm.item('password').setValue(credentials.CREDENTIALS.EMPTY_CREDENTIALS.password);
+            // await $("//input[@data-test='password']").setValue("");
+            
+            // click on login button
+            await loginPage.loginForm.item('logginButton').click();
+            // await $("//input[@data-test='login-button']").click();
+
+            // check that error is shown
+            await expect(await loginPage.loginForm.item('loginError').getText()).toEqual('Epic sadface: Password is required');    
+            // const loginError = await $("//div[@class='error-message-container error']/h3");
+            // await expect(await loginError.getText()).toEqual('Epic sadface: Password is required');
+        });
+    });
+});

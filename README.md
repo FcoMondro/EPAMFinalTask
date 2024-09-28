@@ -81,7 +81,7 @@ allure open
 ```
 
 ## Framework Structure 
-
+```
 ├── allure-results/        # Raw data for Allure reports (auto-generated)
 ├── allure-report/         # Generated Allure report (auto-generated)
 src                        # TAF Source files
@@ -94,3 +94,4 @@ src                        # TAF Source files
 ├───tests                  # Test scripts
 ├── package.json           # Project dependencies and scripts
 └── README.md              # Project documentation
+```

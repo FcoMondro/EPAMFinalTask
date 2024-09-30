@@ -4,6 +4,11 @@ class LoginFormComponent {
     //     return $('//div[@class="login-box"]');
     // }
     
+    /**
+     * 
+     * @param {string} param 
+     * @returns 
+     */
     item (param) {
         const selectors = {
             username: 'input[@data-test="username"]',
@@ -16,6 +21,10 @@ class LoginFormComponent {
         return $(`//${selectors[param]}`);
     }
 
+    /**
+     * 
+     * @param {string} param 
+     */
     async clearField (param) {
         await this.item(param).click();
         // Simulate Ctrl + A (Select all) and Delete

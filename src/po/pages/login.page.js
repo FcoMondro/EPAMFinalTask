@@ -6,6 +6,7 @@ class LoginPage {
         this.loginForm = new LoginFormComponent();
     }
 
+    
     async open () {
         await browser.url("https://www.saucedemo.com/");
     }

@@ -55,6 +55,9 @@ exports.config = {
     }, {
         maxInstances: 2,
         browserName: 'MicrosoftEdge'
+    }, {
+        maxInstances: 2,
+        browserName: 'firefox'
     }],
 
     //

@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "wdio run ./src/config/wdio.conf.js"
+    "test": "wdio run ./src/config/wdio.conf.js",
+    "cucumber": "cucumber-js"
   },
   "keywords": [],
   "author": "",

@@ -4,14 +4,15 @@ const credentials = require('../../src/tests/testData');
 //const allureReporter = require('@wdio/allure-reporter').default;
 const loginPage = new LoginPage();
 const { Given, When, Then } = require('@cucumber/cucumber');
+//const describe = require('@wdio/mocha-framework');
 
-describe("Feature: Login page", () =>{
-    // beforeEach(async () => {
-    //     await loginPage.open();
-    //     //await browser.url("https://www.saucedemo.com/");  //siempre reiniciar el browser si no es un e2e
-    // });
+// describe("Feature: Login page", () =>{
+//     // beforeEach(async () => {
+//     //     await loginPage.open();
+//     //     //await browser.url("https://www.saucedemo.com/");  //siempre reiniciar el browser si no es un e2e
+//     // });
 
-    it("UC-1 Test Login form with empty credentials", async () =>{
+    // it("UC-1 Test Login form with empty credentials", async () =>{
         Given("the user is on the login page", async () => {
             await loginPage.open();
         });
@@ -39,5 +40,5 @@ describe("Feature: Login page", () =>{
             // await expect(await loginError.getText()).toEqual('Epic sadface: Username is required');
 
         });
-    });
-});
+//     });
+// });

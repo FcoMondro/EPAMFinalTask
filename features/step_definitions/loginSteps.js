@@ -8,7 +8,7 @@ const driver = new Builder().withCapabilities(capabilities).build();
 const { Given, When, Then } = require('@cucumber/cucumber');
 //const { expect } = require('chai');
 
-const LoginPage = require('../../src/po/pages/login.page');
+const LoginPage = require('../pageObjects/pages/login.page');
 const credentials = require('../../src/tests/testData');
 const loginPage = new LoginPage();
 

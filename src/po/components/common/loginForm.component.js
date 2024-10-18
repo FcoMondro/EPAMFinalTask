@@ -17,10 +17,11 @@ class LoginFormComponent {
     }
 
     async clearField (param) {
-        await this.item(param).click();
+        const field = driver.findElement(By.xpath(this.item(param)));
+        await field.click();
         // Simulate Ctrl + A (Select all) and Delete
-        await driver.keys(['Control', 'a']);
-        await driver.keys('Delete');
+        await field.sendKeys(['Control', 'a']);
+        await field.sendKeys('Delete');
     }
 }
 

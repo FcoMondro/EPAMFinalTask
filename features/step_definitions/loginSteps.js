@@ -17,20 +17,21 @@ Given("the user is on the login page", async () => {
 });
 
 When("the user types any credentials in login fields", async () => {
-    // driver.findElement(By.xpath('//input[@data-test="username"]')).sendKeys(credentials.CREDENTIALS.INVALID_CREDENTIALS.email);
+    await driver.findElement(By.xpath('//input[@data-test="username"]')).sendKeys(credentials.CREDENTIALS.INVALID_CREDENTIALS.email);
     //await loginPage.loginForm.item('username').setValue(credentials.CREDENTIALS.INVALID_CREDENTIALS.email);
     // await $("//input[@data-test='username']").setValue("");
     
-    //await driver.findElement(By.xpath('//input[@data-test="password"]')).sendKeys(credentials.CREDENTIALS.INVALID_CREDENTIALS.password);
+    await driver.findElement(By.xpath('//input[@data-test="password"]')).sendKeys(credentials.CREDENTIALS.INVALID_CREDENTIALS.password);
     //await loginPage.loginForm.item('password').setValue(credentials.CREDENTIALS.INVALID_CREDENTIALS.password);
     // await $("//input[@data-test='password']").setValue(""); 
 });
 
 When("the user clears both fields", async () => {
-    await driver.findElement(By.xpath('//input[@data-test="username"]')).clear();
-    //await loginPage.loginForm.clearField('username');
 
-    await driver.findElement(By.xpath('//input[@data-test="password"]')).clear();
+    await driver.findElement(By.xpath('//input[@data-test="username"]')).sendKeys(Key.chord(Key.CONTROL, "a", Key.DELETE));
+    //await loginPage.loginForm.clearField('username');
+    
+    await driver.findElement(By.xpath('//input[@data-test="password"]')).sendKeys(Key.chord(Key.CONTROL, "a", Key.DELETE));
     //await loginPage.loginForm.clearField('password');
 });
 

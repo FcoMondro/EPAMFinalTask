@@ -1,36 +1,44 @@
-const LoginFormComponent = require('./../components/common/loginForm.component');
-
 class LoginPage {
-
-    constructor() {
-        //this.page = page;
-        //this.loginForm = new LoginFormComponent(); //eliminar
-        this.usernameField = $(`//$input[@data-test="username"]`);
-        this.passwordField = $(`//$input[@data-test="password"]`);
-        this.logginButton = $(`input[@data-test="login-button"]`);
-        this.loginErrorBanner = $(`h3[@data-test="error"]`);
+    constructor(page) {
+        this.page = page;
+        this.usernameField = page.$(`//input[@data-test="username"]`);
+        this.passwordField = page.$(`//input[@data-test="password"]`);
+        this.logginButton = page.$(`//input[@data-test="login-button"]`);
+        this.loginErrorBanner = page.$(`//h3[@data-test="error"]`);
     }
 
-    
-    
     async openLoginPage () {
-        await browser.url("https://www.saucedemo.com/");
+        await this.page.url("https://www.saucedemo.com/");
     }
 
-    async fillLoginFields(user, password) {
-        await this.usernameField.setValue(user);
+    async setUsernameField(username) {
+        await this.usernameField.setValue(username);
+    }
+
+    async setPasswordField(password) {
         await this.passwordField.setValue(password);
     }
 
-    async clearField (param) {
-        await this.item(param).click();
-        // Simulate Ctrl + A (Select all) and Delete
-        await browser.keys(['Control', 'a']);
-        await browser.keys('Delete');
+    async clearUsernameField() {
+        await this.usernameField.click();
+        await this.page.keys(['Control', 'a']);
+        await this.page.keys('Delete');
     }
 
+    async clearPasswordField() {
+        await this.passwordField.click();
+        await this.page.keys(['Control', 'a']);
+        await this.page.keys('Delete');
+    }
 
-    
+    async clickLoginButton() {
+        await this.logginButton.click();
+
+    }
+
+    async getErrorText() {
+        return await this.loginErrorBanner.getText();
+    }
 }
 
 module.exports = LoginPage;

@@ -16,9 +16,9 @@ describe("Final Task", () => {
 
         it("UC-1 Test Login form with EMPTY credentials", async () =>{
             allureReporter.addStep('Type any credentials into "Username" and "Password" fields.');
-            await loginPage.setUsernameField(credentials.CREDENTIALS.INVALID_CREDENTIALS.email);
-            await loginPage.setPasswordField(credentials.CREDENTIALS.INVALID_CREDENTIALS.password);
-            
+            await loginPage.setUsernameField(credentials.INVALID_CREDENTIALS.email);
+            await loginPage.setPasswordField(credentials.INVALID_CREDENTIALS.password);
+
             allureReporter.addStep('Clear the inputs'); 
             await loginPage.clearUsernameField();
             await loginPage.clearPasswordField();
@@ -32,10 +32,10 @@ describe("Final Task", () => {
 
         it("UC-2 Test Login form with credentials by passing Username", async () =>{
             allureReporter.addStep('Type any credentials in username');
-            await loginPage.setUsernameField(credentials.CREDENTIALS.INVALID_CREDENTIALS.email);
+            await loginPage.setUsernameField(credentials.INVALID_CREDENTIALS.email);
             
             allureReporter.addStep('Enter password'); 
-            await loginPage.setPasswordField(credentials.CREDENTIALS.INVALID_CREDENTIALS.password);
+            await loginPage.setPasswordField(credentials.INVALID_CREDENTIALS.password);
             
             allureReporter.addStep('Clear the "Password" input.'); 
             await loginPage.clearPasswordField();
@@ -49,10 +49,10 @@ describe("Final Task", () => {
 
         it("UC-3 Test Login form with credentials by passing Username & Password", async () => {
             allureReporter.addStep('Type credentials in username which are under Accepted username are sections.'); 
-            await loginPage.setUsernameField(credentials.CREDENTIALS.VALID_CREDENTIALS.email);
+            await loginPage.setUsernameField(credentials.VALID_CREDENTIALS.email);
             
             allureReporter.addStep('Enter password as secret sauce.');
-            await loginPage.setPasswordField(credentials.CREDENTIALS.VALID_CREDENTIALS.password);
+            await loginPage.setPasswordField(credentials.VALID_CREDENTIALS.password);
             
             allureReporter.addStep('Click on Login'); 
             await loginPage.clickLoginButton();

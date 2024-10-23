@@ -33,7 +33,6 @@ class LoginPage {
 
     async clickLoginButton() {
         await this.logginButton.click();
-
     }
 
     async getErrorText() {

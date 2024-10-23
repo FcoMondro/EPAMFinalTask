@@ -1,12 +1,12 @@
-const CREDENTIALS = {
-    VALID_CREDENTIALS : {
+const VALID_CREDENTIALS = {
         email : "standard_user",
         password: "secret_sauce"
-    },
-    INVALID_CREDENTIALS : {
-        email : "email",
-        password : "password"
-    }
 }
 
-exports.CREDENTIALS = CREDENTIALS;
+const INVALID_CREDENTIALS = {
+    email : "email",
+    password : "password"
+}
+
+exports.VALID_CREDENTIALS = VALID_CREDENTIALS;
+exports.INVALID_CREDENTIALS = INVALID_CREDENTIALS;

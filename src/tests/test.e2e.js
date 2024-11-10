@@ -78,8 +78,6 @@ describe("After course completation xd", () =>{
         });
 
         it('should add an item to the cart', async () => {
-            
-
             const productName = "Sauce Labs Backpack";
             await inventoryPage.addItemToCartByName(productName);
             await inventoryPage.goToCart();

@@ -1,5 +1,7 @@
-const { expect, browser } = require('@wdio/globals')
+const { expect, browser, By } = require('@wdio/globals')
 const LoginPage = require('../po/pages/login.page');
+const InventoryPage = require('../po/pages/inventory.page');
+const CartPage = require('../po/pages/cart.page');
 const credentials = require('./testData');
 const AllureReporter = require('@wdio/allure-reporter').default;
 
@@ -62,3 +64,29 @@ describe("Final Task", () => {
         });
     });
 });
+
+describe("After course completation xd", () =>{
+    describe("Inventory Page", () => {
+        let page;
+        let inventoryPage;
+        let cartPage;
+
+        beforeEach(async () => {
+            page = browser;
+            inventoryPage = new InventoryPage(page);
+            cartPage = new CartPage(page);
+        });
+
+        it('should add an item to the cart', async () => {
+            
+
+            const productName = "Sauce Labs Backpack";
+            await inventoryPage.addItemToCartByName(productName);
+            await inventoryPage.goToCart();
+
+            const isInCart = await cartPage.isProductInCart(productName)
+            expect(isInCart).toEqual(true);
+
+        })
+    })
+})

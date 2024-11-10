@@ -52,12 +52,6 @@ exports.config = {
     capabilities: [{
         maxInstances: 2,
         browserName: 'chrome'
-    }, {
-        maxInstances: 2,
-        browserName: 'MicrosoftEdge'
-    }, {
-        maxInstances: 2,
-        browserName: 'firefox'
     }],
 
     //

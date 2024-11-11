@@ -5,9 +5,6 @@ class InventoryPage {
         this.inventoryItemName = `//div[@data-test="inventory-item-name"]`;
         this.inventoryItemPrice = `//div[@data-test="inventory-item-price"]`;
         this.inventoryItemAddToCartButton = `//button[contains(@class,'btn_inventory')]`;
-
-        this.cartButton = page.$('.shopping_cart_link');
-
     }
 
     async addItemToCartByName (productName) {
@@ -28,14 +25,6 @@ class InventoryPage {
         for (const name of productNames) {
             await this.addItemToCartByName(name);
         }
-    }
-
-    
-
-    async goToCart() {
-        const cartButton = await this.cartButton;
-        await cartButton.click();
-
     }
 }
 

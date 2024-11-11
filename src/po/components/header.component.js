@@ -28,8 +28,14 @@ class HeaderPrimary {
             return false;
         }
     }
+    
+    async goToCart() {
+        const cartButton = await this.cartButton;
+        await cartButton.click();
 
-    async getCarItemCount() {
+    }
+
+    async getCartItemCount() {
         let cartBadge = await this.cartBadge;
         if(cartBadge.isExisting() == false){
             return 0;

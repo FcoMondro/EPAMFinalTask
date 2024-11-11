@@ -24,6 +24,12 @@ class InventoryPage {
         }
     }
 
+    async addMultipleItemsToCartByName(productNames) {
+        for (const name of productNames) {
+            await this.addItemToCartByName(name);
+        }
+    }
+
     
 
     async goToCart() {

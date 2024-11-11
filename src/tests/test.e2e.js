@@ -77,6 +77,34 @@ describe("After course completation xd", () =>{
             cartPage = new CartPage(page);
         });
 
+        it('should visualize producst in page', () => {
+
+        });
+
+        it('should sort products', () => {
+
+        });
+
+        it('should open item detail page', () => {
+
+        });
+
+        it('should update cart button', () => {
+
+        });
+
+        
+    });
+    describe("shopping cart Page", () => {
+        let page;
+        let inventoryPage;
+        let cartPage;
+
+        beforeEach(async () => {
+            page = browser;
+            inventoryPage = new InventoryPage(page);
+            cartPage = new CartPage(page);
+        });
         it('should add an item to the cart', async () => {
             const productName = "Sauce Labs Backpack";
             await inventoryPage.addItemToCartByName(productName);
@@ -84,6 +112,10 @@ describe("After course completation xd", () =>{
 
             const isInCart = await cartPage.isProductInCart(productName)
             expect(isInCart).toEqual(true);
+
+        });
+
+        it('should delete item from cart', () => {
 
         })
     })

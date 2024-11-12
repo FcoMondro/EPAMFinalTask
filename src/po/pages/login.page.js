@@ -19,6 +19,12 @@ class LoginPage {
         await this.passwordField.setValue(password);
     }
 
+    async validLogin(){
+        await this.usernameField.setValue("standard_user");
+        await this.passwordField.setValue("secret_sauce");
+        await this.clickLoginButton();
+    }
+
     async clearUsernameField() {
         await this.usernameField.click();
         await this.page.keys(['Control', 'a']);

@@ -110,14 +110,9 @@ describe("After course completation xd", () =>{
         it('should open item detail page', async () => {
 
         });
-
-        it('should update cart button', async () => {
-
-        });
-
-        
     });
-    describe("shopping cart Page", () => {
+    
+    describe("Shopping cart Page", () => {
         let page;
         let inventoryPage;
         let cartPage;

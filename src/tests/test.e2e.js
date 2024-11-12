@@ -81,19 +81,37 @@ describe("After course completation xd", () =>{
             await loginPage.validLogin();
         });
 
-        it('should visualize producst in page', () => {
+        it('should update "Add to cart" button to "Remove" button', async () =>{
+            const productName = "Sauce Labs Backpack";
+            await inventoryPage.addItemToCartByName(productName);
+
+            const itemButtonText = await inventoryPage.getInventoryItemButtonText(productName);
+            expect(itemButtonText).toEqual("Remove");
+            
+        });
+
+        it('should update "Remove" button to "Add to cart" button', async () => {
+            const productName = "Sauce Labs Backpack";
+            await inventoryPage.addItemToCartByName(productName);
+
+            const itemButtonText = await inventoryPage.getInventoryItemButtonText(productName); 
+            expect(itemButtonText).toEqual("Add to cart");
 
         });
 
-        it('should sort products', () => {
+        it('should visualize producst in page', async () => {
 
         });
 
-        it('should open item detail page', () => {
+        it('should sort products', async () => {
 
         });
 
-        it('should update cart button', () => {
+        it('should open item detail page', async () => {
+
+        });
+
+        it('should update cart button', async () => {
 
         });
 
@@ -123,7 +141,7 @@ describe("After course completation xd", () =>{
 
         });
 
-        it('should delete item from cart', () => {
+        it('should delete item from cart', async () => {
 
         })
     })

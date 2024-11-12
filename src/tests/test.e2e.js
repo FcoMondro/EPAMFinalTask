@@ -103,10 +103,12 @@ describe("After course completation xd", () =>{
         let page;
         let inventoryPage;
         let cartPage;
+        let loginPage;
 
         beforeEach(async () => {
             page = browser;
             inventoryPage = new InventoryPage(page);
+            loginPage = new LoginPage(page);
             cartPage = new CartPage(page);
             await loginPage.openLoginPage();
             await loginPage.validLogin();

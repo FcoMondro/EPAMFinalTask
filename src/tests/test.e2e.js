@@ -68,13 +68,17 @@ describe("Final Task", () => {
 describe("After course completation xd", () =>{
     describe("Inventory Page", () => {
         let page;
+        let loginPage;
         let inventoryPage;
         let cartPage;
 
         beforeEach(async () => {
             page = browser;
+            loginPage = new LoginPage(page);
             inventoryPage = new InventoryPage(page);
             cartPage = new CartPage(page);
+            await loginPage.openLoginPage();
+            await loginPage.validLogin();
         });
 
         it('should visualize producst in page', () => {
@@ -104,11 +108,13 @@ describe("After course completation xd", () =>{
             page = browser;
             inventoryPage = new InventoryPage(page);
             cartPage = new CartPage(page);
+            await loginPage.openLoginPage();
+            await loginPage.validLogin();
         });
         it('should add an item to the cart', async () => {
             const productName = "Sauce Labs Backpack";
             await inventoryPage.addItemToCartByName(productName);
-            await inventoryPage.goToCart();
+            await inventoryPage.headerPrimary.goToCart();
 
             const isInCart = await cartPage.isProductInCart(productName)
             expect(isInCart).toEqual(true);

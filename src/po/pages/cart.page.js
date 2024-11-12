@@ -6,7 +6,7 @@ class CartPage {
         this.page = page;
         this.headerPrimary = new HeaderPrimaryComponent(this.page);
         this.headerSecondary = new HeaderSecondaryComponent(this.page);
-        this.cartItems = page.$$(`//div[@data-test="inventory-item"]`);
+        this.cartItems = page.$$(`//div[@data-test="inventory-list"]`);
         this.cartItemName = `//div[@data-test="inventory-item-name"]`;
     }
 

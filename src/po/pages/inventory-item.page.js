@@ -27,7 +27,6 @@ class InventoryItemPage {
         let removeFromCartButton = await this.itemRemoveFromCartButton;
         await removeFromCartButton.click();
     }
-
 }
 
 module.exports = InventoryItemPage;

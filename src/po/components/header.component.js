@@ -32,7 +32,6 @@ class HeaderPrimary {
     async goToCart() {
         const cartButton = await this.cartButton;
         await cartButton.click();
-
     }
 
     async getCartItemCount() {
@@ -43,9 +42,7 @@ class HeaderPrimary {
         else{
             return Number(cartBadge.getText());
         }
-
     }
-
 }
 
 module.exports = HeaderPrimary;

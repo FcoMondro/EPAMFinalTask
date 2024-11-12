@@ -1,6 +1,6 @@
 class HeaderPrimary {
     constructor(page) {
-
+        this.page = page;
         this.sideMenuButton = page.$(`//button[@id="react-burger-menu-btn"]`);
         this.closeMenuButton = page.$(`//button[@id="react-burger-cross-btn"]`);
         this.sideMenu = page.$(`//div[@class="bm-menu-wrap"]`);

@@ -4,8 +4,8 @@ const HeaderSecondaryComponent = require('../components/headerSecondary.componen
 class InventoryItemPage {
     constructor(page){
         this.page = page;
-        this.headerPrimary = new HeaderPrimaryComponent();
-        this.headerSecondary = new HeaderSecondaryComponent();
+        this.headerPrimary = new HeaderPrimaryComponent(this.page);
+        this.headerSecondary = new HeaderSecondaryComponent(this.page);
         this.item = page.$(`//div[@data-test="inventory-item"]`);
         this.itemName = page.$(`//div[@data-test="inventory-item-name"]`);
         this.itemPrice = page.$(`//div[@data-test="inventory-item-price"]`);

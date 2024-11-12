@@ -1,6 +1,6 @@
 const VALID_CREDENTIALS = {
-        email : "standard_user",
-        password: "secret_sauce"
+    email : "standard_user",
+    password: "secret_sauce"
 }
 
 const INVALID_CREDENTIALS = {
